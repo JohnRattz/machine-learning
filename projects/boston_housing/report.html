@@ -11925,7 +11925,10 @@ Standard deviation of prices: $165,171.13
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: 'MEDV' should increase as 'RM' increases, decrease as 'LSTAT' increases, and increase as 'PTRATIO' increases.</strong></p>
+<p><strong>Answer:</strong></p>
+<p>'MEDV' should increase as 'RM' increases since the size and complexity of a house generally increases with the number of rooms, and thus so does the price.</p>
+<p>'MEDV' should decrease as 'LSTAT' increases since areas with greater proportions of lower status residencies are often avoided due to concerns of crime and the surrounding culture.</p>
+<p>'MEDV' should decrease as 'PTRATIO'  increases since a higher ratio of students to teachers means that the teachers cannot give as much individual attention to students.</p>
 
 </div>
 </div>
@@ -12056,7 +12059,8 @@ Standard deviation of prices: $165,171.13
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: The model's coefficient of determination is 0.923, so I consider this model to have successfully captured the variation of the target variable.</strong></p>
+<p><strong>Answer:</strong></p>
+<p>The model's coefficient of determination is 0.923, so I consider this model to have successfully captured the variation of the target variable.</p>
 
 </div>
 </div>
@@ -12129,7 +12133,8 @@ Standard deviation of prices: $165,171.13
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: If we have no data reserved for testing, then we can only test on the training data, on which the trained learning algorithm will perform deceptively well on - that is, it will likely report a much higher score during testing, because it has trained on the data it is tested on and potentially even overfit to it. </strong></p>
+<p><strong>Answer:</strong></p>
+<p>If we have no data reserved for testing, then we can only test on the training data, on which the trained learning algorithm will perform deceptively well on - that is, it will likely report a much higher score during testing, because it has trained on the data it is tested on and potentially even overfit to it.</p>
 
 </div>
 </div>
@@ -13821,10 +13826,12 @@ SUVORK5CYII=
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: Examining the graph with max_depth = 6: 
-The score of the training curve decreases to a minimum value as more training points are added.
-The score of the testing curve increases to a maximum value as more training points are added.
-Having more training points benefits the model if the added points contain at least one point in the feature space that was not already present in the training data (i.e. if the added points are not all duplicates of points in the existing training set).</strong></p>
+<p><strong>Answer:</strong></p>
+<p>Examining the graph with max_depth = 6:</p>
+<p>The score of the training curve decreases to a minimum value as more training points are added.</p>
+<p>The score of the testing curve increases to a maximum value as more training points are added.</p>
+<p>Having more training points benefits the model if the added points contain at least one point in the feature space that was not already present in the training data (i.e. if the added points are not all duplicates of points in the existing training set) and if the increase in predictive performance is considered to be worth the increase in training time, which scales with the number of training points.</p>
+<p>It should be noted that, unless the model has a feature set that allows it to make a definietly correct prediction for any data point given a sufficient amount of training data, the predictive power of the model will typically scale in an asymptotic fashion. That is, predictive performance typically does not scale linearly with the training set size. For example, in the graph with max_depth = 6, the testing score does not improve significantly - it stays around 0.7.</p>
 
 </div>
 </div>
@@ -14547,7 +14554,8 @@ RLRYwlpEREREiyWsRURERLRYwlpEREREiyWsRURERLTY/wC3KnsgKZ+hiQAAAABJRU5ErkJggg==
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: With a maximum depth of 1, the model suffers from high bias because the scores are worse than random guessing (less than 50% accuracy for both training and testing sets). With a maximum depth of 10, the model suffers from high variance because the validation score is lower than it is for prior maximum depths, such as 4.</strong></p>
+<p><strong>Answer:</strong></p>
+<p>With a maximum depth of 1, the model suffers from high bias because the scores are worse than random guessing (less than 50% accuracy for both training and testing sets). With a maximum depth of 10, the model suffers from high variance because the validation score is lower than it is for prior maximum depths, such as 4.</p>
 
 </div>
 </div>
@@ -14567,7 +14575,8 @@ RLRYwlpEREREiyWsRURERLRYwlpEREREiyWsRURERLTY/wC3KnsgKZ+hiQAAAABJRU5ErkJggg==
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: I think a maximum depth of 4 would result in a model that best generalizes to unseen data because it results in the highest validation score.</strong></p>
+<p><strong>Answer:</strong></p>
+<p>I think a maximum depth of 4 would result in a model that best generalizes to unseen data because it results in the highest validation score.</p>
 
 </div>
 </div>
@@ -14598,7 +14607,8 @@ RLRYwlpEREREiyWsRURERLRYwlpEREREiyWsRURERLTY/wC3KnsgKZ+hiQAAAABJRU5ErkJggg==
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: A grid search consists of specifying sets of parameter values to test when creating a classifier or regressor - a.k.a. a "model" (that is, parameters for the classifier or regressor). Specifically, each parameter has a list of values it may be. All combinations of specified parameter values are tested, and the model that has the highest cross-validation testing score is chosen. </strong></p>
+<p><strong>Answer:</strong></p>
+<p>A grid search consists of specifying sets of parameter values to test when creating a classifier or regressor - a.k.a. a "model" (that is, parameters for the classifier or regressor). Specifically, each parameter has a list of values it may be. All combinations of specified parameter values are tested, and the model that has the highest cross-validation testing score is chosen.</p>
 
 </div>
 </div>
@@ -14619,8 +14629,9 @@ RLRYwlpEREREiyWsRURERLRYwlpEREREiyWsRURERLTY/wC3KnsgKZ+hiQAAAABJRU5ErkJggg==
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>**Answer: A k-fold cross-validation consists of splitting the data into k equally (ideally) sized sets. In a given iteration of training followed by testing, k-1 of those sets are used for training and the remaining set is used for testing (a.k.a. validation). K iterations are done, with each iteration using a different data subset for validation (thus, all subsets are tested on at some point). The results may then be averaged.</p>
-<p>The benefit of k-fold cross-validation for grid search is that the validation scores are more generalizable. Rather than training and testing on only one partition of the data, multiple partitions are training and tested on - namely, all of the data is tested.**</p>
+<p><strong>Answer:</strong></p>
+<p>A k-fold cross-validation consists of splitting the data into k equally (ideally) sized sets. In a given iteration of training followed by testing, k-1 of those sets are used for training and the remaining set is used for testing (a.k.a. validation). K iterations are done, with each iteration using a different data subset for validation (thus, all subsets are tested on at some point). The results may then be averaged.</p>
+<p>The benefit of k-fold cross-validation for grid search is that the validation scores are more generalizable. Rather than training and testing on only one partition of the data, multiple partitions are training and tested on - namely, all of the data is tested.</p>
 
 </div>
 </div>
@@ -14768,7 +14779,8 @@ RLRYwlpEREREiyWsRURERLRYwlpEREREiyWsRURERLTY/wC3KnsgKZ+hiQAAAABJRU5ErkJggg==
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: The optimal value for 'max_depth' is 4. That is the exact value that I guessed in Question 6.</strong></p>
+<p><strong>Answer:</strong></p>
+<p>The optimal value for 'max_depth' is 4. That is the exact value that I guessed in Question 6.</p>
 
 </div>
 </div>
@@ -14856,7 +14868,8 @@ Predicted selling price for Client 3&#39;s home: $931,636.36
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer:</strong> The predicted selling prices for the homes were as follows: 
+<p><strong>Answer:</strong></p>
+<p>The predicted selling prices for the homes were as follows: 
  Client 1: 403,025.00 
  Client 2: 237,478.72 
  Client 3: 931,636.36</p>
