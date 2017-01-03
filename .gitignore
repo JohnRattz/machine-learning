@@ -63,3 +63,6 @@ target/
 
 #Ipython Notebook
 .ipynb_checkpoints
+/projects/boston_housing/boston_housing.py
+.idea/
+projects/boston_housing/boston_housing.py
