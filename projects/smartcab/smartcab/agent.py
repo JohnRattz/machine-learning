@@ -40,8 +40,8 @@ class LearningAgent(Agent):
         # Update additional class parameters as needed
         # If 'testing' is True, set epsilon and alpha to 0
         if not testing:
-            #self.epsilon -= 0.05
-            self.epsilon *= 0.95 # epsilon = a^t (a = 0.95)
+            self.epsilon -= 0.05
+            #self.epsilon *= 0.95 # epsilon = a^t (a = 0.95)
             if self.epsilon < 0:
                 self.epsilon = 0
         else:
@@ -117,10 +117,17 @@ class LearningAgent(Agent):
         if not self.learning:
             action = random.choice(self.valid_actions)
         else:
-            maxQ = self.get_maxQ(state)
-            actions = list(self.Q[state].keys())
-            Q_vals = list(self.Q[state].values())
-            action = actions[Q_vals.index(maxQ)]
+            if random.random() < self.epsilon:
+                action = random.choice(self.valid_actions)
+            else:
+                maxQ = self.get_maxQ(state)
+                print maxQ
+                best_actions = [best_action for best_action, Q_val in self.Q[state].iteritems() if Q_val == maxQ]
+                print best_actions
+                #actions = list(self.Q[state].keys())
+                #Q_vals = list(self.Q[state].values())
+                # Choose randomly among actions with the maximum Q value for their state.
+                action = random.choice(best_actions)#actions[Q_vals.index(maxQ)]
 
         return action
 
@@ -188,14 +195,14 @@ def run():
     #   display      - set to False to disable the GUI if PyGame is enabled
     #   log_metrics  - set to True to log trial and simulation results to /logs
     #   optimized    - set to True to change the default log file name
-    sim = Simulator(env, update_delay=0.01, display=False, log_metrics=True, optimized=True)
+    sim = Simulator(env, update_delay=0.01, display=False, log_metrics=True)#, optimized=True)
     
     ##############
     # Run the simulator
     # Flags:
     #   tolerance  - epsilon tolerance before beginning testing, default is 0.05 
     #   n_test     - discrete number of testing trials to perform, default is 0
-    sim.run(tolerance=0.001, n_test=20)
+    sim.run(n_test=10)#tolerance=0.001, n_test=20)
 
 
 if __name__ == '__main__':
